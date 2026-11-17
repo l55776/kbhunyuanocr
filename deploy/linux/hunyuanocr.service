@@ -1,0 +1,27 @@
+# HunyuanOCR llama-server systemd unit（模板：@APP@/@PORT@/@MODEL@ 会被 install 脚本替换）
+# 安装：sudo bash install_hunyuanocr.sh
+# 说明：实际启动参数统一收敛到 linux/start_server.sh（含 -t/-tb 线程与 MODEL 开关），
+#       本 unit 仅传入 PORT / MODEL 环境变量并指向该脚本。
+[Unit]
+Description=HunyuanOCR llama-server (OpenAI-compatible OCR API, port @PORT@)
+Documentation=https://github.com/ggml-org/llama.cpp
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hunyuanocr
+Group=hunyuanocr
+WorkingDirectory=@APP@
+Environment=PORT=@PORT@
+Environment=MODEL=@MODEL@
+ExecStart=@APP@/linux/start_server.sh
+Restart=always
+RestartSec=5
+# 模型加载等待上限（CPU 机器冷启动加载约 10~30s）
+TimeoutStartSec=120
+# mmproj 视觉模型内存映射：防止句柄/锁限制
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

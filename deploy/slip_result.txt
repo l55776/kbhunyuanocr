@@ -1,0 +1,9 @@
+```json
+{
+  "billNo": "Y1058",
+  "date": "2026年3月26日",
+  "warehouse": "",
+  "cvendername": "安徽福仁堂医药有限公司",
+  "goodsList": [{"cgoodsid": "SP0001", "cgoodsname": "复方丹参滴丸", "cpkname": "180丸/瓶", "cfactoryname": "天士力医药集团股份有限公司", "cfactoryno": "国药准字Z10950111", "cunit": "盒", "cph": "250302", "dmadedate": "2025-03-02", "dexpdate": "2027-02-28", "fqty": 20, "fprice": 35.80, "amount": 716.00}, {"cgoodsid": "SP0002", "cgoodsname": "阿莫西林胶囊", "cpkname": "0.25g×24粒", "cfactoryname": "联邦制药", "cfactoryno": "国药准字H44021518", "cunit": "盒", "cph": "240915", "dmadedate": "2024-09-15", "dexpdate": "2026-08-31", "fqty": 10, "fprice": 12.50, "amount": 125.00}]
+}
+```
